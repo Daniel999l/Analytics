@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   renderStats();
   renderFeed();
+  setupNavigation();
 });
 
 const mockStats = [
@@ -44,4 +45,29 @@ function renderFeed() {
       <span class="timestamp">${item.time}</span>
     </div>
   `).join('');
+}
+
+function setupNavigation() {
+  const navItems = document.querySelectorAll('.nav-item');
+  const views = {
+    dashboard: document.getElementById('view-dashboard'),
+    analytics: document.getElementById('view-analytics'),
+    reports: document.getElementById('view-reports'),
+    settings: document.getElementById('view-settings'),
+  };
+
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Update active class
+      navItems.forEach(n => n.classList.remove('active'));
+      item.classList.add('active');
+
+      // Hide all views, show selected
+      const viewId = item.dataset.view;
+      Object.values(views).forEach(v => v.classList.add('hidden'));
+      if (views[viewId]) views[viewId].classList.remove('hidden');
+    });
+  });
 }
