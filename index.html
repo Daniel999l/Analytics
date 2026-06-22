@@ -11,69 +11,24 @@
     <aside class="sidebar">
       <div class="sidebar-brand">Analytics</div>
       <nav class="sidebar-nav">
-        <a href="#" class="nav-item active" data-view="dashboard">Dashboard</a>
-        <a href="#" class="nav-item" data-view="analytics">Analytics</a>
-        <a href="#" class="nav-item" data-view="reports">Reports</a>
-        <a href="#" class="nav-item" data-view="settings">Settings</a>
+        <a href="#" class="nav-item active">Dashboard</a>
       </nav>
     </aside>
     <main class="main-content">
-      <nav class="mobile-nav">
-        <a href="#" class="mobile-nav-item active" data-view="dashboard">Dashboard</a>
-        <a href="#" class="mobile-nav-item" data-view="analytics">Analytics</a>
-        <a href="#" class="mobile-nav-item" data-view="reports">Reports</a>
-        <a href="#" class="mobile-nav-item" data-view="settings">Settings</a>
-      </nav>
-
-      <!-- Dashboard view (default) -->
-      <div id="view-dashboard" class="view active">
-        <header class="page-header">
-          <h1>Dashboard</h1>
-          <span class="date-range">Last 30 days</span>
-        </header>
-        <section class="stats-grid" id="statsGrid">
+      <div class="mobile-header">Analytics</div>
+      <header class="page-header">
+        <h1>Dashboard</h1>
+        <span class="date-range">Last 30 days</span>
+      </header>
+      <section class="stats-grid" id="statsGrid">
+        <!-- Populated by dashboard.js -->
+      </section>
+      <section class="activity-feed" id="activityFeed">
+        <h2>Recent Activity</h2>
+        <div class="feed-list">
           <!-- Populated by dashboard.js -->
-        </section>
-        <section class="activity-feed" id="activityFeed">
-          <h2>Recent Activity</h2>
-          <div class="feed-list">
-            <!-- Populated by dashboard.js -->
-          </div>
-        </section>
-      </div>
-
-      <!-- Analytics view (hidden) -->
-      <div id="view-analytics" class="view hidden">
-        <header class="page-header">
-          <h1>Analytics</h1>
-          <span class="date-range">Last 30 days</span>
-        </header>
-        <div class="placeholder-content">
-          <p>Detailed analytics charts and insights go here.</p>
         </div>
-      </div>
-
-      <!-- Reports view (hidden) -->
-      <div id="view-reports" class="view hidden">
-        <header class="page-header">
-          <h1>Reports</h1>
-          <span class="date-range">Last 30 days</span>
-        </header>
-        <div class="placeholder-content">
-          <p>Generated reports and exports appear here.</p>
-        </div>
-      </div>
-
-      <!-- Settings view (hidden) -->
-      <div id="view-settings" class="view hidden">
-        <header class="page-header">
-          <h1>Settings</h1>
-          <span class="date-range">Last 30 days</span>
-        </header>
-        <div class="placeholder-content">
-          <p>Account and dashboard configuration options.</p>
-        </div>
-      </div>
+      </section>
     </main>
   </div>
   <script src="dashboard.js"></script>
